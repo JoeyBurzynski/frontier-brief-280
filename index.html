@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frontier Brief · Edition 280 · 7 October 2026</title>
+<meta name="description" content="MarketKarma Frontier Brief, Edition 280. Twenty distinct AI and generative AI stories from the past 24 hours, with one takeaway each.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4efe6;
+    --paper-2: #ebe4d6;
+    --ink: #1c1915;
+    --ink-soft: #3d3832;
+    --muted: #6e675c;
+    --rule: #d8d0c2;
+    --rule-strong: #1c1915;
+    --accent: #6b3a2a;
+    --take: #243026;
+    --take-bg: #e7efe6;
+    --max: 760px;
+    --wide: 980px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+  .skip { position: absolute; left: -999px; top: 0; }
+  .skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 9; }
+  header.mast { border-bottom: 1px solid var(--rule-strong); padding: 22px 28px 18px; }
+  .mast-inner, main, footer.colophon { max-width: var(--wide); margin: 0 auto; }
+  .kicker {
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+  }
+  .brand { color: var(--ink); font-weight: 600; letter-spacing: 0.16em; }
+  nav.tools { display: flex; gap: 18px; font-size: 13px; letter-spacing: 0.04em; }
+  nav.tools a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .hero { max-width: var(--wide); margin: 0 auto; padding: 48px 28px 28px; }
+  .edition { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  h1 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    margin: 0 0 18px;
+  }
+  .deck {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 22px;
+    line-height: 1.35;
+    max-width: 40rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .meta-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 32px;
+  }
+  .meta-row div { padding: 14px 16px 14px 0; }
+  .meta-row strong { display: block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .meta-row span { font-family: "Newsreader", Georgia, serif; font-size: 18px; }
+  main { padding: 10px 28px 64px; }
+  section { padding: 28px 0 8px; border-top: 1px solid var(--rule); }
+  h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+  .sec-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .lede { max-width: var(--max); color: var(--ink-soft); }
+  ol.toc { list-style: none; padding: 0; margin: 18px 0 0; columns: 2; column-gap: 36px; }
+  ol.toc li { break-inside: avoid; padding: 7px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px; }
+  ol.toc a { color: var(--ink); text-decoration: none; }
+  ol.toc a:hover { color: var(--accent); }
+  ol.toc .n { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 8px; }
+  .lanes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+  .lane { background: var(--paper-2); padding: 14px 14px 12px; }
+  .lane b { display: block; font-size: 13px; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .lane span { font-size: 13px; color: var(--ink-soft); }
+  article.story { display: grid; grid-template-columns: 72px 1fr; gap: 8px 18px; padding: 26px 0; border-top: 1px solid var(--rule); }
+  .num { font-family: "Newsreader", Georgia, serif; font-size: 28px; color: var(--accent); line-height: 1; }
+  .tag { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  h3 { font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em; margin: 4px 0 10px; }
+  article p { margin: 0 0 10px; max-width: 42rem; }
+  .take { background: var(--take-bg); color: var(--take); padding: 10px 12px; margin-top: 8px; max-width: 42rem; font-size: 15.5px; }
+  .take b { letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; font-weight: 600; margin-right: 6px; }
+  .src { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  .signal { background: var(--ink); color: #f4efe6; padding: 28px 24px; margin-top: 12px; }
+  .signal h2 { color: #f4efe6; }
+  .signal ol { margin: 8px 0 0; padding-left: 18px; }
+  .signal li { margin: 8px 0; max-width: 42rem; }
+  footer.colophon { border-top: 1px solid var(--rule-strong); padding: 22px 28px 48px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 800px) {
+    .meta-row, .lanes { grid-template-columns: 1fr 1fr; }
+    ol.toc { columns: 1; }
+    article.story { grid-template-columns: 1fr; }
+    .hero, main, header.mast { padding-left: 18px; padding-right: 18px; }
+  }
+  @media print {
+    nav.tools, .skip { display: none; }
+    body { background: #fff; }
+    article.story { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the brief</a>
+<header class="mast">
+  <div class="mast-inner kicker">
+    <span class="brand">MarketKarma · Frontier Brief</span>
+    <nav class="tools">
+      <a href="#contents">Contents</a>
+      <a href="#signal">Signal for Joey</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </div>
+</header>
+<div class="hero">
+  <div class="edition">Wednesday 7 October 2026 · Edition 280 · Window 6 Oct 08:00 UTC – 7 Oct 08:00 UTC</div>
+  <h1>The labs opened the math drawer, the cyber gate, and the IPO clock.</h1>
+  <p class="deck">Twenty distinct stories from the last day. Frontier models, policy, markets, safety, and enterprise GenAI — written for the closed loop between architecture and revenue.</p>
+  <div class="meta-row">
+    <div><strong>Edition</strong><span>280</span></div>
+    <div><strong>Stories</strong><span>20</span></div>
+    <div><strong>Lanes</strong><span>8</span></div>
+    <div><strong>Reader</strong><span>Joey · MarketKarma</span></div>
+  </div>
+</div>
+<main id="main">
+  <section id="contents">
+    <div class="sec-label">How this edition was built</div>
+    <h2>Eight lanes, one brief</h2>
+    <p class="lede">No prior edition number was on file, so this starts at the day-of-year: 280. Each story is distinct and tied to a primary or near-primary source. Oct 5 items appear only when they still set today’s operating picture.</p>
+    <div class="lanes">
+      <div class="lane"><b>01 Labs</b><span>Releases, access gates, price.</span></div>
+      <div class="lane"><b>02 Open weights</b><span>Europe and China vs closed US.</span></div>
+      <div class="lane"><b>03 Policy</b><span>Hearings, letters, audits.</span></div>
+      <div class="lane"><b>04 Markets</b><span>IPO path, rounds, compute.</span></div>
+      <div class="lane"><b>05 Enterprise</b><span>Agents inside the work graph.</span></div>
+      <div class="lane"><b>06 Safety</b><span>What labs will and will not bind.</span></div>
+      <div class="lane"><b>07 Science</b><span>Math as a publication channel.</span></div>
+      <div class="lane"><b>08 Infra</b><span>Power, GPUs, backlog.</span></div>
+    </div>
+    <ol class="toc">
+      <li><a href="#s1"><span class="n">01</span>OpenAI dumps 722 math manuscripts</a></li>
+      <li><a href="#s2"><span class="n">02</span>Mistral Large 4, “Le Chonk”</a></li>
+      <li><a href="#s3"><span class="n">03</span>Anthropic merges Glasswing into CVP</a></li>
+      <li><a href="#s4"><span class="n">04</span>Altman: accept some bad things</a></li>
+      <li><a href="#s5"><span class="n">05</span>Moreno letter to Amodei</a></li>
+      <li><a href="#s6"><span class="n">06</span>Agent shopping protocol</a></li>
+      <li><a href="#s7"><span class="n">07</span>Atlassian × GPT-6</a></li>
+      <li><a href="#s8"><span class="n">08</span>OpenAI visual ads</a></li>
+      <li><a href="#s9"><span class="n">09</span>Claude for Startups, free year</a></li>
+      <li><a href="#s10"><span class="n">10</span>Lambda $4B pre-IPO</a></li>
+      <li><a href="#s11"><span class="n">11</span>DeepSeek nears $12B</a></li>
+      <li><a href="#s12"><span class="n">12</span>Moonshot at $50B</a></li>
+      <li><a href="#s13"><span class="n">13</span>Meta and Microsoft cut Claude</a></li>
+      <li><a href="#s14"><span class="n">14</span>Kwon before Australia’s committee</a></li>
+      <li><a href="#s15"><span class="n">15</span>EmbeddingGemma 2</a></li>
+      <li><a href="#s16"><span class="n">16</span>Anthropic asks for voice data</a></li>
+      <li><a href="#s17"><span class="n">17</span>SAP to buy TechWolf</a></li>
+      <li><a href="#s18"><span class="n">18</span>Model-provider neutrality</a></li>
+      <li><a href="#s19"><span class="n">19</span>Morally binding pact, still not law</a></li>
+      <li><a href="#s20"><span class="n">20</span>Slowdown talk meets antitrust</a></li>
+    </ol>
+  </section>
+  <section>
+    <div class="sec-label">The twenty</div>
+    <h2>Stories</h2>
+    <article class="story" id="s1">
+      <div class="num">01</div>
+      <div>
+        <div class="tag">Science · Labs · 6 Oct</div>
+        <h3>OpenAI publishes 722 math manuscripts from an unreleased model.</h3>
+        <p>The public openai/math repo holds 722 manuscripts in 372 result families, from an evaluation of about 4,000 problems. OpenAI says the average result used compute equal to roughly three hours of ChatGPT Pro thinking. Lean proofs cover many, not all. The New York Times counted 377 findings and tied the drop to last month’s Navier–Stokes claim. AGMAI, the Institute for Advanced Study advisory group, had asked labs to release through academic channels and to disclose model, prompts, and compute.</p>
+        <div class="take"><b>Takeaway</b>Unreleased models are now a research-publication channel. Treat “internal frontier” as a capability class you cannot buy yet — and do not cite a result until a Lean check or a mathematician’s re-proof exists.</div>
+        <div class="src">Sources: <a href="https://community.openai.com/t/first-look-at-mathematics-manuscripts-from-an-internal-frontier-model-at-openai/1403886">OpenAI Developer Community</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github">The Verge</a> · <a href="https://www.nytimes.com/2026/10/06/science/openai-math-problems.html">New York Times</a></div>
+      </div>
+    </article>
+    <article class="story" id="s2">
+      <div class="num">02</div>
+      <div>
+        <div class="tag">Open weights · Labs · 6 Oct</div>
+        <h3>Mistral previews Large 4, “Le Chonk”: 1.05T total, 49B active.</h3>
+        <p>Public API preview now; weights aimed for the end of October under a Mistral license, after a cyber and government review. Native multimodal, trained in Mistral’s European data centers on Grace Blackwell — VentureBeat says 4,000 GPUs, The Decoder 3,800. Artificial Analysis Intelligence Index: 38, up from Large 3’s 9, still well behind Claude Opus 5.5. Mistral says Opus 5.5 and GPT-6 Astra refuse a cyber test ML4 scores 82% on.</p>
+        <div class="take"><b>Takeaway</b>Europe’s open-weight answer is a sparse trillion, not a dense one. Useful as a sovereign fallback and a cyber-refusal contrast — not yet a Sonnet 5.5 replacement on Terminal-Bench work.</div>
+        <div class="src">Sources: <a href="https://mistral.ai/news/mistral-large-4/">Mistral</a> · <a href="https://venturebeat.com/technology/mistral-debuts-large-4-le-chonk-a-1-trillion-parameter-text-output-model-with-high-benchmarks-planned-for-open-weights-release">VentureBeat</a> · <a href="https://the-decoder.com/mistral-large-4-is-said-to-be-the-most-powerful-open-ai-model-from-europe-and-the-u-s/">The Decoder</a></div>
+      </div>
+    </article>
+    <article class="story" id="s3">
+      <div class="num">03</div>
+      <div>
+        <div class="tag">Safety · Labs · 6 Oct</div>
+        <h3>Anthropic folds Glasswing into a three-tier Cyber Verification Program.</h3>
+        <p>Defense, Red Team, and Specialized tiers unlock Opus 5.5, Sonnet 5.5, and Mythos 5.1 with reduced blocking. Glasswing partners reported at least 129,000 verified vulnerabilities from April to July. Specialized is reserved for grids, flight systems, and interbank rails. In Anthropic’s own telling, the Red Team tier blocked nothing and Opus 5.5 finished 34 of 50 attack scenarios.</p>
+        <div class="take"><b>Takeaway</b>Cyber capability is now a licensed product, not a jailbreak. If a client stack depends on Claude for security review, the public model and the CVP model are different instruments.</div>
+        <div class="src">Sources: <a href="https://www.anthropic.com/news/cyber-verification-program">Anthropic</a> · <a href="https://www.reuters.com/legal/litigation/anthropic-opens-its-most-powerful-ai-models-more-security-teams-2026-10-06/">Reuters</a></div>
+      </div>
+    </article>
+    <article class="story" id="s4">
+      <div class="num">04</div>
+      <div>
+        <div class="tag">Policy · Safety · 6 Oct</div>
+        <h3>Altman says the world should accept some bad things from AI.</h3>
+        <p>In an interview published 4 October and still driving replies on the 6th, Altman drew his line at loss of control, not at intermediate harm. Senators answering on X did not pick up that line. Same week, under oath at New York’s City Council, OpenAI, Anthropic, Google, and Meta would not commit that failing an independent safety test would stop a release. SpaceXAI did not appear despite a subpoena.</p>
+        <div class="take"><b>Takeaway</b>The public safety position is residual risk, not a kill-switch. Do not write client copy that implies a lab will hold a model because an outside test failed.</div>
+        <div class="src">Sources: <a href="https://www.thinkfacility.com/ai-news/">Think Facility, 6 Oct</a> · <a href="https://cogito-ergo-sum.dev/whats-happening-in-ai">Cogito briefing, 6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s5">
+      <div class="num">05</div>
+      <div>
+        <div class="tag">Policy · Markets · 6 Oct</div>
+        <h3>Senator Moreno tells Amodei to drop the alarm before the offering.</h3>
+        <p>Moreno quotes Amodei’s own stated odds of things going badly and asks why Americans should buy the stock. Anthropic’s investor day is reported for 14 October in San Francisco, with talk of a pre-Thanksgiving listing and a $1.8–2T private mark against 2025 revenue of about $4.6B and an operating loss near $8B. Anthropic has not confirmed timing or valuation.</p>
+        <div class="take"><b>Takeaway</b>Safety narrative is now an IPO diligence item. Vendor concentration in Claude gets a political discount until the prospectus risk factors are public.</div>
+        <div class="src">Sources: <a href="https://www.thinkfacility.com/blog/moreno-letter-amodei-anthropic-ipo-alarmist/">Think Facility</a> · <a href="https://www.dailyaithread.com/en/topics/business">AI Times via Daily AI Thread</a></div>
+      </div>
+    </article>
+    <article class="story" id="s6">
+      <div class="num">06</div>
+      <div>
+        <div class="tag">Enterprise · 6 Oct</div>
+        <h3>Meta, Sierra, Stripe, and Walmart draft a shop-agent standard.</h3>
+        <p>The personal-agent protocol would let an agent sign in as the user while the merchant decides what the agent may touch. It is a commerce-side answer to agents that already hold logins.</p>
+        <div class="take"><b>Takeaway</b>Agent authority is becoming a merchant policy, not a model feature. Any checkout or intake agent needs an explicit allow-list, not “act as the user.”</div>
+        <div class="src">Source: <a href="https://www.thinkfacility.com/blog/personal-agent-protocol-sierra-meta-walmart-stripe/">Think Facility, 6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s7">
+      <div class="num">07</div>
+      <div>
+        <div class="tag">Enterprise · 6 Oct</div>
+        <h3>Atlassian puts GPT-6 across Rovo and the Teamwork Graph.</h3>
+        <p>OpenAI frontier models, including GPT-6 Astra and the GPT-5.6 series, will power agents on Atlassian’s platform. More than 3,000 Atlassian developers already use Codex. Plugins expose work items and technical docs into the coding loop.</p>
+        <div class="take"><b>Takeaway</b>The enterprise wedge is the work graph, not the chat box. Briefs and matter prep win when they sit on the same graph the team already trusts.</div>
+        <div class="src">Source: <a href="https://openai.com/index/atlassian-partnership/">OpenAI, 6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s8">
+      <div class="num">08</div>
+      <div>
+        <div class="tag">Markets · 6 Oct</div>
+        <h3>OpenAI will place visual ads beside generated images.</h3>
+        <p>A U.S. test with a first advertiser group starts later this month. OpenAI says the ads are labeled and do not steer ChatGPT’s answers, and that measurement and brand-suitability pilots are coming.</p>
+        <div class="take"><b>Takeaway</b>Image gen is the ad surface, not the answer. For Dr. Boz and client creative, assume the free image path gets commercial neighbors; paid tiers stay the clean room.</div>
+        <div class="src">Source: <a href="https://www.dailyaithread.com/en/topics/business">TechCrunch via Daily AI Thread, 6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s9">
+      <div class="num">09</div>
+      <div>
+        <div class="tag">Enterprise · 6 Oct</div>
+        <h3>Anthropic offers startups a free year of Claude Team and $1,000 in API credits.</h3>
+        <p>Eligible if founded in the last five years or funded in the last two. Up to five seats, marketplace plug-in access, Applied AI office hours. Partner stack advertised up to about $45,000.</p>
+        <div class="take"><b>Takeaway</b>Distribution, not model quality, is the October fight. Claim the credit if a MarketKarma or studio experiment qualifies; do not architect a product on a one-year subsidy.</div>
+        <div class="src">Sources: <a href="https://www.dailyaithread.com/en/topics/business">TechCrunch, 6–7 Oct</a> · <a href="https://letsdatascience.com/news/stream/funding-business">Let’s Data Science, 6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s10">
+      <div class="num">10</div>
+      <div>
+        <div class="tag">Infra · Markets · 7 Oct</div>
+        <h3>Lambda is raising up to $4B at a $14.5B pre-money.</h3>
+        <p>Reported from an investor letter; could be the last private round before a 2027 IPO. Backlog moved from $15B in June to $50B in September, with much of the jump traced to a late-August Anthropic deal. Blackstone and Coatue are named as leads in secondary reporting.</p>
+        <div class="take"><b>Takeaway</b>Compute backlog is the real Anthropic balance sheet. Model price cuts do not mean capacity is loose.</div>
+        <div class="src">Sources: <a href="https://www.dailyaithread.com/en/topics/business">TechCrunch, 7 Oct</a> · <a href="https://aiweekly.co/ai-news-today/funding-ai-news">AI Weekly / WSJ, 6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s11">
+      <div class="num">11</div>
+      <div>
+        <div class="tag">Markets · Open weights · 6 Oct</div>
+        <h3>DeepSeek is close to at least RMB 80B, about $12B, before a 2027 listing.</h3>
+        <p>Bloomberg’s newsletter names Tencent and CATL among the largest proposed backers, with talk of as much as about $14.9B. Confidence is medium: reported, not filed.</p>
+        <div class="take"><b>Takeaway</b>The open-weight cost curve is being refinanced, not retired. Price your agent stack against Chinese open models, not against Astra list price.</div>
+        <div class="src">Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-10-06/china-s-ai-champions-raise-billions-ahead-of-ipos">Bloomberg, 6 Oct</a> · <a href="https://postcutoff.com/ai/">Post-Cutoff</a></div>
+      </div>
+    </article>
+    <article class="story" id="s12">
+      <div class="num">12</div>
+      <div>
+        <div class="tag">Markets · 6 Oct</div>
+        <h3>Moonshot closes a private round near $50B and aims at a Hong Kong IPO.</h3>
+        <p>Bloomberg reports a first-quarter 2027 Hong Kong listing, possibly up to $5B. Kimi K3 is the product the round is underwriting. Same tape: Kuaishou’s Kling has picked CICC, Goldman, and UBS for a $1B-plus Hong Kong IPO aimed at 2027.</p>
+        <div class="take"><b>Takeaway</b>Video and long-context open models now have public-market calendars. Recut’s tool bets should assume Kling-class generators get cheaper and more regulated at the same time.</div>
+        <div class="src">Sources: <a href="https://letsdatascience.com/news/stream/funding-business">Let’s Data Science, 6 Oct</a> · <a href="https://aiweekly.co/ai-news-today/funding-ai-news">AI Weekly / Bloomberg, 5–6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s13">
+      <div class="num">13</div>
+      <div>
+        <div class="tag">Enterprise · 6 Oct</div>
+        <h3>Meta and Microsoft pull internal Claude spend.</h3>
+        <p>The Information, via The Decoder: Microsoft’s Claude run-rate had been projected above $1B; executives pointed people at GitHub Copilot and OpenAI, and spend fell by more than a third. At Meta, Claude Code users dropped from about 60,000 to 30,000 after a 28-day stretch that cost more than $105M.</p>
+        <div class="take"><b>Takeaway</b>The largest Claude customers are also competitors. Multi-model routing is no longer a hedge — it is how the buyers themselves behave.</div>
+        <div class="src">Source: <a href="https://www.dailyaithread.com/en/topics/business">The Decoder / The Information, 6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s14">
+      <div class="num">14</div>
+      <div>
+        <div class="tag">Safety · Policy · 6 Oct</div>
+        <h3>Jason Kwon apologizes in Sydney over the Medicare agent breach.</h3>
+        <p>Australia’s Joint Select Committee questioned OpenAI’s chief strategy officer about June agent breaches. Anthropic told the same setting it would report agent hacks within days and backed mandatory reporting. OpenAI has separately said it notified 100-plus organizations about unauthorized agent activity.</p>
+        <div class="take"><b>Takeaway</b>Agent incident reporting is becoming a procurement clause. Any health-adjacent or matter workflow needs a named human on the hook before an agent holds credentials.</div>
+        <div class="src">Sources: <a href="https://www.abc.net.au/news/2026-10-06/federal-politics-live-blog-coalition-migration-oct-6/107230622">ABC, 6 Oct</a> · <a href="https://postcutoff.com/ai/">Post-Cutoff</a></div>
+      </div>
+    </article>
+    <article class="story" id="s15">
+      <div class="num">15</div>
+      <div>
+        <div class="tag">Labs · 6 Oct</div>
+        <h3>Google ships EmbeddingGemma 2, open and multimodal.</h3>
+        <p>A lightweight open embedding model for text and image retrieval. Small enough to sit next to a private corpus rather than inside a frontier call.</p>
+        <div class="take"><b>Takeaway</b>Retrieval quality is still the lever on Dr. Boz and Bratter RAG. Swap-test this against the current dense-plus-sparse index before paying frontier tokens to re-rank.</div>
+        <div class="src">Source: <a href="https://news.abai.cloud/x-updates">abai.cloud pulse, 6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s16">
+      <div class="num">16</div>
+      <div>
+        <div class="tag">Labs · 7 Oct</div>
+        <h3>Anthropic asks selected Claude users for voice-training permission.</h3>
+        <p>Opt-in on voice conversations, announced 7 October. Not a default grab, but the first clear voice-data ask of the Claude consumer surface.</p>
+        <div class="take"><b>Takeaway</b>Voice OS work should assume provider training terms will tighten around audio. Keep client voice off any account that has accepted training.</div>
+        <div class="src">Source: <a href="https://news.abai.cloud/x-updates">abai.cloud pulse, 7 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s17">
+      <div class="num">17</div>
+      <div>
+        <div class="tag">Enterprise · 6 Oct</div>
+        <h3>SAP agrees to acquire TechWolf.</h3>
+        <p>The Belgian work-intelligence company maps skills from actual work, not job titles. SAP is buying the layer that tells an agent what a workforce can do.</p>
+        <div class="take"><b>Takeaway</b>Enterprise GenAI spend is moving from chat seats to skill graphs. That is the same shape as a firm information map — and the reason a generic assistant loses to a sourced one.</div>
+        <div class="src">Source: <a href="https://letsdatascience.com/news/stream/funding-business">Let’s Data Science, 6 Oct</a></div>
+      </div>
+    </article>
+    <article class="story" id="s18">
+      <div class="num">18</div>
+      <div>
+        <div class="tag">Policy · Markets · 6 Oct</div>
+        <h3>Brookings: stop foundation-model providers from picking the winners.</h3>
+        <p>The essay argues Anthropic, OpenAI, and Google can refuse supply to a downstream rival, and notes SpaceX — which owns xAI — has signaled it will likely acquire Cursor. European DMA was not extended to generative AI. U.S. neutrality rules are proposed, not passed.</p>
+        <div class="take"><b>Takeaway</b>Your coding-agent vendor can be bought by a model vendor. Keep the agent harness model-swappable; do not let Cursor or Claude Code become the only path.</div>
+        <div class="src">Source: <a href="https://www.brookings.edu/articles/to-unleash-ai-innovation-stop-model-providers-from-picking-the-winners/">Brookings</a></div>
+      </div>
+    </article>
+    <article class="story" id="s19">
+      <div class="num">19</div>
+      <div>
+        <div class="tag">Policy · 6 Oct</div>
+        <h3>Wheeler: the White House accord is morally binding, and that is not enough.</h3>
+        <p>Tom Wheeler’s 6 October note follows the 29 September accord signed by Google, Anthropic, Meta, OpenAI, xAI, and Nvidia. Outside evaluators and a board committee are named. Auditor identity, standard, and penalty are not. Trump called it morally binding.</p>
+        <div class="take"><b>Takeaway</b>Do not treat the accord as a control you can show a client. It is a press commitment until an auditor and a fail condition exist.</div>
+        <div class="src">Sources: <a href="https://www.brookings.edu/articles/trumps-morally-binding-ai-pact-is-not-enough/">Brookings, Wheeler 6 Oct</a> · <a href="https://www.coindesk.com/tech/2026/09/30/openai-google-and-meta-pledge-outside-ai-audits-under-voluntary-white-house-deal">CoinDesk on the 29 Sep signing</a></div>
+      </div>
+    </article>
+    <article class="story" id="s20">
+      <div class="num">20</div>
+      <div>
+        <div class="tag">Policy · Safety · 5 Oct, still live</div>
+        <h3>A slowdown agreement among labs is an antitrust problem, not a press problem.</h3>
+        <p>Columbia’s Blue Sky Blog: Amodei’s 12 September call for coordinated pace limits, endorsed in direction by Altman, Hassabis, and Musk, cannot be a bare agreement to slow innovation under Section 1. Subscribers have already sued Anthropic, OpenAI, SpaceXAI, and Google in the Northern District of California alleging exactly that.</p>
+        <div class="take"><b>Takeaway</b>Expect safety coordination to move into government-supervised standards or die in discovery. Plan for a continued capability race, not a voluntary pause.</div>
+        <div class="src">Source: <a href="https://clsbluesky.law.columbia.edu/2026/10/05/can-frontier-ai-labs-lawfully-agree-to-slow-down-to-save-humanity/">CLS Blue Sky Blog, 5 Oct</a></div>
+      </div>
+    </article>
+  </section>
+  <section id="signal">
+    <div class="signal">
+      <div class="sec-label">Signal for Joey</div>
+      <h2>What changes today’s stack</h2>
+      <ol>
+        <li>Route production agent work across at least two labs. Meta and Microsoft just demonstrated the single-vendor failure mode from the buyer side.</li>
+        <li>Keep Cursor and Claude Code behind an interface. A SpaceX–xAI–Cursor combination would put the harness and the model in one cap table.</li>
+        <li>Claim the Claude for Startups credit if the entity qualifies. Do not let the free year set the architecture.</li>
+        <li>Benchmark EmbeddingGemma 2 against the Pinecone hybrid index before the next Dr. Boz or Bratter retrieval pass.</li>
+        <li>Treat CVP-class Claude and public Claude as different products in any security or petition-review workflow.</li>
+        <li>Hold client voice and matter audio off training-opted accounts. Anthropic asked today.</li>
+        <li>For Recut, watch Kling’s Hong Kong path and OpenAI’s image-ad test. Generation economics and brand-safety surfaces move together.</li>
+        <li>Do not brief a client that labs will halt a release on a failed outside test. They declined to say that, on the record, this week.</li>
+      </ol>
+    </div>
+  </section>
+  <section id="sources">
+    <div class="sec-label">Method</div>
+    <h2>Sources and limits</h2>
+    <p class="lede">Lookups ran 7 October 2026 against primary lab posts where they exist (OpenAI, Anthropic, Mistral), then Reuters, The Verge, the New York Times, Bloomberg as cited by secondary desks, ABC, Brookings, and the CLS Blue Sky Blog. Reported funding and IPO timing are marked as reported. Edition number 280 is the day-of-year start; increment from here. No Bratter branding.</p>
+  </section>
+</main>
+<footer class="colophon">
+  MarketKarma Frontier Brief · Edition 280 · 7 October 2026 · Prepared for Joey Burzynski · Not a Bratter document · Sources linked inline.
+</footer>
+</body>
+</html>
